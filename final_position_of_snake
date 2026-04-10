@@ -1,0 +1,19 @@
+# Final Position of Snake (LeetCode)
+# Approach: Track row and column movement in grid
+# Time: O(n), Space: O(1)
+
+class Solution:
+    def finalPositionOfSnake(self, n, commands):
+        i, j = 0, 0  # start at (0,0)
+
+        for cmd in commands:
+            if cmd == "UP":
+                i -= 1
+            elif cmd == "DOWN":
+                i += 1
+            elif cmd == "LEFT":
+                j -= 1
+            else:  # RIGHT
+                j += 1
+
+        return i * n + j
